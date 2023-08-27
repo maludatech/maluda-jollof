@@ -1,0 +1,26 @@
+ <%- include("partials/header.ejs") %>
+    <div class="main-container" id="mb">
+    <div class="body-container">
+        <div class="left-container">
+            <img src="/assests/jollof-rice.jpg" class="home-img" alt="image here" title="Nigerian Jollof Rice">
+        </div>
+        <div class="right-container">
+        <h1 class="title">OUR NEW POST!!!</h1>
+        <p class="content">This is our new delicacy for this week. Spicy Jollof rice with veggies and plaintain at it's best. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quaerat neque sint enim velit accusamus in animi! Temporibus in, aperiam optio, animi eligendi hic, voluptatum officiis quibusdam non eos cumque.</p>
+        </div>
+    </div>
+    <% posts.forEach((post)=> {%>
+     <div class="body-container">
+        <div class="left-container">
+            <% if(post.image) {%>
+            <img src="data:image/jpeg;base64, <%= post.image.toString('base64')%>" class="home-img" alt="image here" title="Nigerian Jollof Rice">
+            <% } %>
+        </div>
+    <div class="right-container" id="post-container">
+        <h1 class="title"><%= post.title%></h1>
+        <p class="content"><%= post.content%></p>
+        <% }) %>
+    </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

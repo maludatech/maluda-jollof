@@ -1,0 +1,121 @@
+html {
+    box-sizing: border-box;
+  }
+.container-fluid{
+    background-color: black;
+}
+.fs-4{
+    color: rgb(240, 181, 62);
+}
+.nav-link{
+    color: rgb(240, 181, 62);
+}
+.nav-link:hover{
+    color: white;
+}
+.btn-primary{
+    background-color: rgba(78, 109, 230, 0.952);
+    border: white;
+}
+.btn-primary:hover{
+    filter: brightness(80%);
+}
+#footer{
+    position: fixed;
+    bottom: 0;
+    min-height: 10%;
+    max-height: 11%;
+}
+#footer-text{
+    color: rgb(240, 181, 62);
+}
+.fa-brands{
+    color: rgb(240, 181, 62);
+}
+.fa-brands:hover{
+    color: white;
+}
+.home-img{
+    margin-left: 5%;
+    width: 40vw;
+    height: 60vh;
+    object-fit: cover;
+    border-top-right-radius:10%;
+    border-bottom-left-radius:10%;
+}
+#post-container{
+    margin-bottom: 12%;
+}
+.body-container{
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+    margin-bottom: 5%;
+}
+.title{
+    color: rgb(240, 181, 62);
+    font-family: cursive, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#new-post-title{
+    text-align: center;
+}
+.new-post-title-input{
+    margin-left: 10%;
+    margin-bottom: 3%;
+    width: 80%;
+}
+.new-post-image{
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+.new-post-content-textarea{
+    margin-left: 10%;
+    width: 80%;
+    height: 20%;
+    margin-bottom: 4%;
+}
+.new-post-btn{
+    margin-left: 45%;
+    height: 7%;
+    width: 15%;
+    background-color: rgba(78, 109, 230, 0.952);
+    border: white;
+    color: white;
+    border-radius: 5%;
+}
+.about-container{
+    margin: 0% 1% 0% 1%;
+}
+#bold{
+    font-weight: bold;
+}
+#menu-title{
+    text-align: center;
+    font-size: 300%;
+}
+.jollof-menu-intro{
+    margin-left: 1%;
+}
+#mb{
+    margin-bottom: 14%;
+}
+@media screen and (max-width: 600px){
+    .home-img{
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 98%;
+        height: 50%;
+        border-top-right-radius:3%;
+        border-bottom-left-radius:3%;
+    }
+    .body-container{
+        display: flex;
+        flex-direction: column;
+    }
+    #post-container{
+        margin-bottom: 24%;
+    }
+    #mb{
+        margin-bottom: 25%;
+    }
+}

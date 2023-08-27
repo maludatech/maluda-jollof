@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<div class="blog-container" id="mb">
+<h1 class="title" id="new-post-title">Create new Blog post</h1>
+<form action="/post" method="post" enctype="multipart/form-data">
+<input type="text" placeholder="title" class="new-post-title-input" name="title">
+<br/>
+<label for="image" class="new-post-image">Image:</label>
+<br/>
+<input type="file" placeholder="image" class="new-post-title-input" name="image">
+<textarea type="text" placeholder="content" class="new-post-content-textarea" name="content"></textarea>
+<br/>
+<button  class="new-post-btn" type="submit">Post</button>
+</form>
+</div>
+<%- include("partials/footer.ejs") %>
