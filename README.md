@@ -1,1 +1,2 @@
 # maluda-jollof
+Maluda Jollof is a food service commercial website that adverts the resturant "Maluda-Jollof" which is an imaginary resturant that deals in marketting and serving of all the different dishes or varieties of Jollof Rice in my country Nigeria. I designed this website using EJS templating language, CSS, Bootstrap, NodeJS, ExpressJS and MongoDb. Lemme know what you think bout this wonderful and great website through my twitter @maludatech.
