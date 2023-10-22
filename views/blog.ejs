@@ -1,15 +1,15 @@
 <%- include("partials/header.ejs") %>
-<div class="blog-container" id="mb">
-<h1 class="title" id="new-post-title">Create new Blog post</h1>
-<form action="/post" method="post" enctype="multipart/form-data">
-<input type="text" placeholder="title" class="new-post-title-input" name="title">
-<br/>
-<label for="image" class="new-post-image">Image:</label>
-<br/>
-<input type="file" placeholder="image" class="new-post-title-input" name="image">
-<textarea type="text" placeholder="content" class="new-post-content-textarea" name="content"></textarea>
-<br/>
-<button  class="new-post-btn" type="submit">Post</button>
-</form>
+<div class="pt-20 mx-2 flex flex-col gap-4 items-center justify-center text-center mx-auto">
+  <h1 class="text-3xl text-yellow-500">Create new Blog post</h1>
+  <form action="/post" method="post" enctype="multipart/form-data">
+    <input type="text" placeholder="title" class="border-2 border-black rounded p-2 w-[80vw] mb-6 border-slate-400">
+    <br />
+    <label for="image" class="text-start pt-4">Image:</label>
+    <br />
+    <input type="file" placeholder="image" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400">
+    <textarea type="text" placeholder="content" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400"></textarea>
+    <br />
+    <button class="bg-blue-500 rounded-md p-3 w-[200px] hover:text-white mx-auto" type="submit">Post</button>
+  </form>
 </div>
 <%- include("partials/footer.ejs") %>
