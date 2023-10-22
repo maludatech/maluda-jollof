@@ -1,13 +1,17 @@
 <%- include("partials/header.ejs") %>
-<div class="pt-20 mx-2 flex flex-col gap-4 items-center justify-center text-center mx-auto">
-  <h1 class="text-3xl text-yellow-500">Create new Blog post</h1>
-  <form action="/post" method="post" enctype="multipart/form-data">
-    <input type="text" placeholder="title" class="border-2 border-black rounded p-2 w-[80vw] mb-6 border-slate-400">
+<div class="pt-20 mx-2 flex flex-col gap-4 items-center justify-center text-center mx-auto mb-20">
+  <h1 class="text-3xl text-yellow-500">Create a new Blog post</h1>
+  <form action="/post" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <input type="text" id="title" placeholder="title" class="border-2 border-black rounded p-2 w-[80vw] mb-6 border-slate-400">
     <br />
     <label for="image" class="text-start pt-4">Image:</label>
     <br />
-    <input type="file" placeholder="image" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400">
-    <textarea type="text" placeholder="content" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400"></textarea>
+    <input type="file" id="image" placeholder="image" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400">
+    <textarea type="text" id="content" placeholder="content" class="border-2 border-black rounded p-2 w-[80vw] mb-4 border-slate-400"></textarea>
+    <br />
+    <div id="error-message" style="display: none;" class="bg-red-200 text-red-500 p-2 rounded border-2 border-red-600 w-[80vw] mx-auto">
+      Title and content cannot be empty.
+    </div>
     <br />
     <button class="bg-blue-500 rounded-md p-3 w-[200px] hover:text-white mx-auto" type="submit">Post</button>
   </form>
