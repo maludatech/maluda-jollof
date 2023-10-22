@@ -28,7 +28,7 @@ mongoose.set("strictQuery", true);
         const postSchema = new mongoose.Schema({
             title: String,
             content: String,
-            image: Buffer
+             image: { type: Buffer, required: false }
         });
 
         const Post = mongoose.model("Post", postSchema);
