@@ -9,3 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleDropdown = !toggleDropdown;
   });
 });
+
+function validateForm() {
+  var title = document.getElementById("title").value;
+  var content = document.getElementById("content").value;
+  var errorMessage = document.getElementById("error-message");
+
+  if (title.trim() === "" || content.trim() === "") {
+    errorMessage.style.display = "block";
+    return false; // Prevent the form from submitting
+  } else {
+    errorMessage.style.display = "none";
+    return true; // Allow the form to submit
+  }
+}
