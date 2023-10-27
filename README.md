@@ -1,4 +1,4 @@
-# Maluda Jollof - Food Service Website
+# Maluda Jollof - Food Service Website 
 
 Maluda Jollof is a full-stack web application that brings you the delightful experience of exploring and ordering from our imaginary 😅 restaurant menu. Built with the MEN stack (MongoDB, Express.js, Node.js), this app offers a seamless user interface for customers eager to explore our menu offerings. I used EJS templating language, CSS, and JavaScript for the frontend.
 
