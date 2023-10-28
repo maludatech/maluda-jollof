@@ -11,7 +11,7 @@ const port = 3000;
 const storage = multer.memoryStorage(); //stores the file in memory as a buffer
 const upload = multer({storage: storage});
 
-
+app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 mongoose.set("strictQuery", true);
@@ -19,16 +19,17 @@ mongoose.set("strictQuery", true);
 
 (async()=>{
     try{
-        await mongoose.connect("mongodb+srv://Maluda-Tech:Ugochi3203@maludajollofcluster.mwtojeq.mongodb.net/MaludajollofDB"),{
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        }
+  await mongoose.connect("mongodb+srv://Maluda-Tech:Ugochi3203@maludajollofcluster.mwtojeq.mongodb.net/MaludajollofDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
         console.log(`CONNECTED TO MONGO!`);
 
         const postSchema = new mongoose.Schema({
             title: String,
             content: String,
-             image: { type: Buffer, required: false }
+            image: { type: Buffer, required: false }
         });
 
         const Post = mongoose.model("Post", postSchema);
@@ -53,7 +54,9 @@ app.get("/blog", (req,res)=>{
 app.get("/login", (req,res)=>{
     res.render("login.ejs");
 });
-app.post("/post", upload.single("image"),async(req,res)=>{
+app.post("/post", upload.single("image"), async (req, res) => {
+    console.log(req.body);  // Log the request body
+    console.log(req.file);  // Log the uploaded file
     const title = req.body.title;
     const content = req.body.content;
     const image = req.file.buffer;
@@ -62,9 +65,11 @@ app.post("/post", upload.single("image"),async(req,res)=>{
         content: content,
         image: image
     });
-        await post.save();
-        res.redirect("/");
-})
+    console.log(title, content, image);
+    await post.save();
+    res.redirect("/");
+});
+
 }catch(error){
     console.log(`OH NO! MONGO CONNECTION/QUERY ERROR!`);
     console.error(error);
@@ -74,3 +79,4 @@ app.post("/post", upload.single("image"),async(req,res)=>{
 app.listen(process.env.PORT||port, ()=>{
     console.log(`Server is up and running on port ${port}`);
 });
+
