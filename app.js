@@ -19,7 +19,7 @@ mongoose.set("strictQuery", true);
 
 (async()=>{
     try{
-  await mongoose.connect("mongodb+srv://Maluda-Tech:Ugochi3203@maludajollofcluster.mwtojeq.mongodb.net/MaludajollofDB", {
+  await mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
