@@ -79,3 +79,5 @@ app.post("/post", upload.single("image"), async (req, res) => {
 app.listen(process.env.PORT||port, ()=>{
     console.log(`Server is up and running on port ${port}`);
 });
+
+//mongodb://127.0.0.1:27017/MaludajollofDB
