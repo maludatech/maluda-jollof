@@ -19,7 +19,7 @@ mongoose.set("strictQuery", true);
 
 (async()=>{
     try{
-  await mongoose.connect(process.env.MONGODB_URL, {
+    await mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -79,4 +79,3 @@ app.post("/post", upload.single("image"), async (req, res) => {
 app.listen(process.env.PORT||port, ()=>{
     console.log(`Server is up and running on port ${port}`);
 });
-
